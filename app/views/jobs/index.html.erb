@@ -11,3 +11,13 @@
   </div>
 <% end %>
 </section>
+<section id="companies">
+<h1>Empresas</h1>
+<% @companies.each do |company| %>
+  <div>
+    <p>
+      <%= link_to company.name, company %>
+    </p>
+  </div>
+<% end %>
+</section>
