@@ -5,9 +5,10 @@
   <%= f.text_field :title %>
   <%= f.label :location %>
   <%= f.text_field :location %>
+  <%= f.label :company %>
   <%= f.collection_select :company_id, @companies, :id, :name %>
   <%= f.label :category %>
-  <%= f.text_field :category %>
+  <%= f.collection_select :category_id, @categories, :id, :name %>
   <%= f.label :description %>
   <%= f.text_area :description %>
   <%= f.label :featured %>
