@@ -17,7 +17,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-    if(@job.save)
+    if @job.save
       redirect_to @job
     else
       flash[:error] = "Warning! All fields are mandatory."
