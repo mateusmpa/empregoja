@@ -29,6 +29,16 @@ RSpec.describe Job, type: :model do
       end
     end
 
+    context "create 5 days ago" do
+      it "is recent" do
+        travel_to 5.days.ago do
+          @job = create_job
+        end
+        expect(@job).to be_recent
+      end
+    end
+
+
   end
 
 end
