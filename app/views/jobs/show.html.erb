@@ -1,4 +1,7 @@
 <h1><%= @job.title %></h1>
+<%if @job.expired? %>
+  <p>Vaga Expirada</p>
+<% end %>
 <p>
   <%= @job.company.name if @job.company %><br>
   <%= @job.location %><br>
