@@ -1,14 +1,47 @@
-<%= form_for @job do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.collection_select :company_id, @companies, :id, :name %>
-  <%= f.label :category %>
-  <%= f.collection_select :category_id, @categories, :id, :name %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.label :featured %>
-  <%= f.check_box :featured %>
-  <%= f.submit submit_label %>
+<%= form_for @job, html: { class: "form-horizontal" } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :location, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_field :location, class: "form-control", placeholder: "Location" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.collection_select :company_id, @companies, :id, :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :category, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.collection_select :category_id, @categories, :id, :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, class: "col-md-2 control-label" %>
+    <div class="col-md-10">
+      <%= f.text_area :description, class: "form-control", placeholder: "Insert a description..." %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :featured %>
+          <%= f.label :featured %>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <%= f.submit submit_label, class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
