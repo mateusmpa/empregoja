@@ -13,7 +13,7 @@ class Job < ActiveRecord::Base
   end
 
   def recent?
-    DateTime.now < (created_at + 5.days)
+    Time.zone.now < (created_at + 5.days)
   end
 
   def expired?
@@ -23,6 +23,4 @@ class Job < ActiveRecord::Base
   def self.unexpired_jobs
     Job.where('created_at > ?', EXPIRATION_DAYS.ago)
   end
-
-
 end
