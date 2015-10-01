@@ -17,4 +17,5 @@ RSpec.configure do |config|
   config.include ActiveSupport::Testing::TimeHelpers
   config.backtrace_exclusion_patterns << /gems/
   config.infer_spec_type_from_file_location!
+  config.include FactoryGirl::Syntax::Methods
 end

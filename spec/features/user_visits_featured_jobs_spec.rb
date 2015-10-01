@@ -4,14 +4,15 @@ feature 'User visits featured jobs' do
 
   scenario 'successfully' do
 
-    company = Company.create!(name: "Campus Code",location: "São Paulo",phone: "22334455",mail: "campuscode@campuscode.com")
+    #company = Company.create!(name: "Campus Code",location: "São Paulo",phone: "22334455",mail: "campuscode@campuscode.com")
+    company = create(:company)
+    #category = Category.create!(name:"Programador")
+    category = create(:category)
 
-    category = Category.create!(name:"Programador")
-
-    job = Job.create!(title: "Desenvolvedor", location: "California", company: company, category: category, description: "Vaga para desenvolvedor", featured: true)
+    #job = Job.create!(title: "Desenvolvedor", location: "California", company: company, category: category, description: "Vaga para desenvolvedor", featured: true)
+    job = create(:job)
 
     visit job_path(job)
-
 
     expect(page).to have_content "Desenvolvedor"
     expect(page).to have_content "California"
